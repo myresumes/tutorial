@@ -1,0 +1,5 @@
+{
+  "apiURL": "http://10.0.3.76:9090/",
+  "apiRoutes": ["/api"],
+  "mappedUrlPrefix": ""
+}
