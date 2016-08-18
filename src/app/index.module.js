@@ -8,7 +8,9 @@
       'toastr',
       'about',
       'user',
-      'dashboard'
+      'dashboard',
+      'courses',
+      'lessons'
     ]);
 
 })();

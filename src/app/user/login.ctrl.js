@@ -25,7 +25,7 @@
         .login(vm.credentials)
         .then(function (user) {
           console.log(user);
-          $injector.get('$state').go('dashbaord');
+          $injector.get('$state').go('courses');
         });
       // $injector.get('$http')
       //     .post('/api/login', vm.credentials)

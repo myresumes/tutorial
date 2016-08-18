@@ -1,19 +1,89 @@
-<nav class="navbar navbar-static-top navbar-inverse">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
-                <span class="glyphicon glyphicon-home"></span> Gulp Angular
-            </a>
-        </div>
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-            <ul class="nav navbar-nav">
-                <li class="active"><a ng-href="#">Home</a></li>
-                <li><a ng-href="#" ui-sref="about">About</a></li>
-                <li><a ng-href="#" ui-sref="login">Login</a></li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right acme-navbar-text">
-                <li>Application was created {{ vm.relativeDate }}.</li>
-            </ul>
-        </div>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" ng-click="vm.isCollapsed = !vm.isCollapsed" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="javascript:void(0);">
+        <img src="assets/images/forumias-small.png" style="margin-top:-11px;" />
+      </a>
     </div>
+    <div class="navbar-collapse collapse in" uib-collapse="vm.isCollapsed" aria-expanded="false" style="margin-right:25px;overflow:hidden;">
+      <!-- <div class="collapse navbar-collapse" uib-dropdown-menu role="menu" aria-labelledby="single-button"> -->
+      <span class="nav navbar-nav navbar-right" uib-dropdown>
+        <img ng-src="{{vm.userInfo.profilePhoto || 'assets/images/defaultProfileImg.png'}}" style="width:50px;border:1px solid gainsboro;" class="img-responsive center-block img-circle" id="simple-dropdown" uib-dropdown-toggle>
+        <ul class="dropdown-menu" uib-dropdown-menu aria-labelledby="simple-dropdown">
+          <li role="menuitem" ng-click="vm.editUser('update', vm.userInfo);">
+            <a href="javascript:void(0);">Edit Profile</a>
+          </li>
+          <li class="divider"></li>
+          <li role="menuitem" ng-click="vm.signout()">
+            <a href="javascript:void(0);">Sign Out</a>
+          </li>
+        </ul>
+      </span>
+      <form class="navbar-form navbar-right" role="search" ng-if="false">
+        <div class="input-group">
+          <input type="text" class="form-control" placeholder="Search courses by name.." ng-model="vm.searchText" />
+          <span class="input-group-btn">
+            <button class="btn btn-default" type="button" ng-click="vm.searchCourse();">Go!</button>
+          </span>
+        </div>
+      </form>
+      <span class="navbar-form navbar-right">
+        Hello
+        <span ng-bind="vm.userInfo.fullName"></span>
+        <div>Roll No.
+          <span ng-bind="vm.userInfo.id"></span>
+        </div>
+      </span>
+      <!-- project menu -->
+      <ul class="nav navbar-nav navbar-left">
+        <li ui-sref="main.libary" ui-sref-active="active" >
+          <a href="javascript:void(0);" ng-click="vm.getAllCourses();">
+            <i class="fa fa-database fa-fw" aria-hidden="true"></i> Library
+          </a>
+        </li>
+        <li ui-sref="main.myCourses" ui-sref-active="active" >
+          <a href="javascript:void(0);" ng-click="vm.getMyCourses();">
+            <i class="fa fa-clone fa-fw" aria-hidden="true"></i> My Courses
+          </a>
+        </li>
+        <li ui-sref="main.courses" ui-sref-active="active" >
+          <a href="javascript:void(0);" ng-click="vm.getAllCourses();">
+            <i class="fa fa-database fa-fw" aria-hidden="true"></i> Course
+          </a>
+        </li>
+        <li ui-sref="main.lessons" ui-sref-active="active" >
+          <a href="javascript:void(0);" ng-click="vm.getAllLessons();">
+            <i class="fa fa-clone fa-fw" aria-hidden="true"></i> Lessons
+          </a>
+        </li>
+        <li ui-sref="main.instructors" ui-sref-active="active" >
+          <a href="javascript:void(0);" ng-click="vm.getUsers('instructor');">
+            <i class="fa fa-user fa-fw" aria-hidden="true"></i> Instructors
+          </a>
+        </li>
+        <li ui-sref="main.students" ui-sref-active="active" >
+          <a href="javascript:void(0);" ng-click="vm.getUsers('student');">
+            <i class="fa fa-users fa-fw" aria-hidden="true"></i> Students
+          </a>
+        </li>
+        <li ui-sref="main.test.home">
+          <a href="javascript:void(0);" ng-click="vm.getAllTests();">
+            <i class="fa fa-certificate fa-fw" aria-hidden="true"></i> Test
+          </a>
+        </li>
+        <li ui-sref="main.examsList" >
+          <a href="javascript:void(0);">
+            <i class="fa fa-certificate fa-fw" aria-hidden="true"></i> Exams
+          </a>
+        </li>
+      </ul>
+      <!-- project menu -->
+    </div>
+  </div>
 </nav>

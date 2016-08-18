@@ -1,16 +1,21 @@
-(function() {
-    'use strict';
+(function () {
+  'use strict';
 
-    angular
-        .module('user', ['tutorial'])
-        .config(config);
+  angular
+    .module('user', ['tutorial'])
+    .config(config);
 
-    function config($stateProvider) {
-        $stateProvider
-            .state('login', {
-                url: '/login',
-                templateUrl: 'app/user/login.tpl.html',
-                controller: 'LoginCtrl as vm'
-            });
-    }
+  function config($stateProvider) {
+    $stateProvider
+      .state('login', {
+        url: '/login',
+        views: {
+          '@': {
+            templateUrl: 'app/user/login.tpl.html',
+            controller: 'LoginCtrl as vm'
+          }
+        }
+
+      });
+  }
 })();

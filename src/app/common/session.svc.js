@@ -6,7 +6,7 @@
     .factory('session', session);
 
   /* @ngInject */
-  function session($injector) {
+  function session($injector, _) {
     var service = {
         login: login,
         getUser: getUser,
@@ -35,7 +35,7 @@
             setUserName(user.fullName);
             setUserId(user.id);
             // setTenantId(user.tenantId);
-            setUserRole(user.profileType);
+            setUserRoles(user.profileType);
             setUserEmail(user.email);
             return $q.when(svcData.result);
           }

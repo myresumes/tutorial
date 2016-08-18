@@ -1,5 +1,5 @@
 {
-  "apiURL": "http://52.66.119.248",
+  "apiURL": "http://localhost:8080",
   "apiRoutes": ["/api"],
   "mappedUrlPrefix": ""
 }
