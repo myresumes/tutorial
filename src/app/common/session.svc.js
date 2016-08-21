@@ -23,7 +23,7 @@
 
     function login(credentials) {
       return $injector.get('$http')
-        .post('api/login', credentials)
+        .post('api/users/auth', credentials)
         .then(function (resp) {
           if (resp && resp.status === 200) {
             return resp.data;

@@ -10,8 +10,8 @@
     var vm = this;
     vm.title = 'Controller';
     vm.credentials = {
-      userName: '',
-      password: ''
+      un: '',
+      pwd: ''
     };
     vm.login = login;
     activate();
